@@ -11,8 +11,12 @@ layout: default
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
       {{ post.content }}
-    分类: <a href="">{{ post.categories }}</a>
-    <a href="{{ post.url | prepend: site.baseurl }}">评论</a>
+    <div class="post-footer">
+        分类: <a href="">{{ post.categories }}</a>
+        <div class="comment">
+        <a href="{{ post.url | prepend: site.baseurl }}">评论</a>
+        </div>
+    </div>
     </div>
 </div>
 {% endfor %}

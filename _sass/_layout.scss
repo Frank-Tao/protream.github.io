@@ -37,18 +37,18 @@
     color: #444444;
 }
 
-.info-list {
+.nav-list {
    float: left; 
     margin: 5px 0px;
 }
 
-.info-list ul {
+.nav-list ul {
     margin: 0px;
     list-style-type: square;
     display: inline-block;
 }
 
-.info-list ul li {
+.nav-list ul li {
     padding-right: 8px;
     display: inline;
 }
@@ -72,6 +72,10 @@
 .post-body {
     padding: 12px;
     font-size: 14px;
+}
+
+.comment {
+    float: right;
 }
 
 .sidebar {
