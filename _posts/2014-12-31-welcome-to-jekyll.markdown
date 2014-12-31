@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2014-12-31 08:50:24
-categories: jekyll update
+categories: python
 ---
 > hello world!
 
