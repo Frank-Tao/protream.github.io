@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="home">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     <div id="page" class="box">
         <div class="post-date">
             {{ post.date | date: "%b %-d, %Y" }}
@@ -16,4 +16,15 @@ layout: default
         </div>
     </div>
     {% endfor %}
+    
+      <div class="paginator">
+        <div class="step-links">
+          {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path }}">Newer Posts</a>
+          {% endif %}
+          {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path }}"><span class="older">Older Posts</span></a>
+          {% endif %}
+        </div>
+      </div>
 </div>
