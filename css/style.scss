@@ -1,0 +1,397 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   13px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #333333;
+$background-color: #eeeeee;
+$brand-color:      #2895f1;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: 300;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+}
+
+a:link {
+    text-decoration: none;
+    color: #3778cd;
+}
+a:visited {
+    text-decoration: none;
+    color: #3778cd;
+}
+a:hover {
+    text-decoration: underline;
+    color: #3778cd;
+}
+
+.name h1 a:link{
+    color: #444444;
+    text-decoration: none;
+}
+.name h1 a:visited{
+    color: #444444;
+    text-decoration: none;
+}
+
+#page h2 a:linK {
+    color: #444444;
+}
+
+#page h2 a:visited {
+    color: #444444;
+}
+
+#page h2 a:hover {
+    color: #3778cd;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+ul, ol {
+    margin-left: $spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+
+blockquote {
+    color: $grey-color;
+    border-left: 4px solid $grey-color-light;
+    padding-left: $spacing-unit / 2;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+pre,
+code {
+    font-size: 12px;
+    border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: scroll;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.wrapper {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
+%clearfix {
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.icon {
+
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+
+        path {
+            fill: $grey-color;
+        }
+    }
+}
+
+.header {
+    width: 100%;
+    height: 30px;
+    background-color: #eeeeee;
+    border-bottom: 1px solid lightgray;
+}
+
+.header-main {
+    width: 940px;
+    margin: 0px auto;
+}
+
+.rss {
+    float: right;
+    margin: 5px 0px;
+}
+
+.container {
+    width: 940px;
+    margin: 0px auto;
+}
+
+.box {
+    border: 1px solid #eeeeee;  
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    -webket-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.name {
+    margin: 25px 0px;
+}
+
+.name h1 {
+    margin: 0px;
+    font-size: 40px;
+    color: #444444;
+}
+
+.nav-list {
+   float: left; 
+    margin: 5px 0px;
+}
+
+.nav-list ul {
+    margin: 0px;
+    list-style-type: square;
+    display: inline-block;
+}
+
+.nav-list ul li {
+    padding-right: 8px;
+    display: inline;
+}
+
+.page-wrapper {
+    float: left;
+    width: 623px;
+    margin-bottom: 25px;
+}
+
+#page {
+    background-color: #ffffff;
+    margin-top: 25px;
+}
+
+.post-date {
+    padding: 5px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.post-body {
+    padding: 12px;
+    font-size: 14px;
+}
+
+.comment {
+    float: right;
+}
+
+.sidebar {
+    float: right;
+    margin-top: 25px;
+    width: 285px;
+}
+
+#weibo {
+    height: 425px;
+}
+
+#categories {
+    margin-top: 15px;
+    width: 285px;
+    height: 50px;
+    background-color: #ffffff;
+    padding: 8px 0px;
+}
+
+.paginator {
+    float: left;
+    width: 623px;
+    height: 50px;
+    background-color: #ffffff;
+    margin: 25px 0px;
+    font-size: 18px;
+    border: 1px solid #eeeeee;
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    -webket-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.step-links {
+    margin: 12px 8px;
+}
+
+.older{
+    text-align: right;
+}
+
+#disqus_thread {
+    margin: 12px;
+}
+
+.site-footer {
+    clear: both;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid lightgray;
+    text-align: center;
+}
+
+.footer-info {
+    position: relative;
+    top: 20px;
+}
+
+/**
+ * Syntax highlighting styles
+ */
+.highlight {
+.hll { background-color: #ffffcc }
+.c { color: #177500 } /* Comment */
+.err { color: #000000 } /* Error */
+.k { color: #A90D91 } /* Keyword */
+.l { color: #1C01CE } /* Literal */
+.n { color: #000000 } /* Name */
+.o { color: #000000 } /* Operator */
+.cm { color: #177500 } /* Comment.Multiline */
+.cp { color: #633820 } /* Comment.Preproc */
+.c1 { color: #177500 } /* Comment.Single */
+.cs { color: #177500 } /* Comment.Special */
+.kc { color: #A90D91 } /* Keyword.Constant */
+.kd { color: #A90D91 } /* Keyword.Declaration */
+.kn { color: #A90D91 } /* Keyword.Namespace */
+.kp { color: #A90D91 } /* Keyword.Pseudo */
+.kr { color: #A90D91 } /* Keyword.Reserved */
+.kt { color: #A90D91 } /* Keyword.Type */
+.ld { color: #1C01CE } /* Literal.Date */
+.m { color: #1C01CE } /* Literal.Number */
+.s { color: #C41A16 } /* Literal.String */
+.na { color: #836C28 } /* Name.Attribute */
+.nb { color: #A90D91 } /* Name.Builtin */
+.nc { color: #3F6E75 } /* Name.Class */
+.no { color: #000000 } /* Name.Constant */
+.nd { color: #000000 } /* Name.Decorator */
+.ni { color: #000000 } /* Name.Entity */
+.ne { color: #000000 } /* Name.Exception */
+.nf { color: #000000 } /* Name.Function */
+.nl { color: #000000 } /* Name.Label */
+.nn { color: #000000 } /* Name.Namespace */
+.nx { color: #000000 } /* Name.Other */
+.py { color: #000000 } /* Name.Property */
+.nt { color: #000000 } /* Name.Tag */
+.nv { color: #000000 } /* Name.Variable */
+.ow { color: #000000 } /* Operator.Word */
+.mb { color: #1C01CE } /* Literal.Number.Bin */
+.mf { color: #1C01CE } /* Literal.Number.Float */
+.mh { color: #1C01CE } /* Literal.Number.Hex */
+.mi { color: #1C01CE } /* Literal.Number.Integer */
+.mo { color: #1C01CE } /* Literal.Number.Oct */
+.sb { color: #C41A16 } /* Literal.String.Backtick */
+.sc { color: #2300CE } /* Literal.String.Char */
+.sd { color: #C41A16 } /* Literal.String.Doc */
+.s2 { color: #C41A16 } /* Literal.String.Double */
+.se { color: #C41A16 } /* Literal.String.Escape */
+.sh { color: #C41A16 } /* Literal.String.Heredoc */
+.si { color: #C41A16 } /* Literal.String.Interpol */
+.sx { color: #C41A16 } /* Literal.String.Other */
+.sr { color: #C41A16 } /* Literal.String.Regex */
+.s1 { color: #C41A16 } /* Literal.String.Single */
+.ss { color: #C41A16 } /* Literal.String.Symbol */
+.bp { color: #5B269A } /* Name.Builtin.Pseudo */
+.vc { color: #000000 } /* Name.Variable.Class */
+.vg { color: #000000 } /* Name.Variable.Global */
+.vi { color: #000000 } /* Name.Variable.Instance */
+.il { color: #1C01CE } /* Literal.Number.Integer.Long */
+
+}
