@@ -237,8 +237,8 @@ pre {
 }
 
 .nav-list {
-   float: left; 
     margin: 5px 0px;
+    float: left;
 }
 
 .nav-list ul {
@@ -291,7 +291,11 @@ pre {
     margin-top: 15px;
     width: 285px;
     background-color: #ffffff;
-    padding: 8px 0px;
+    padding: 12px 0px 0px 0px;
+}
+
+#categories ul li {
+    line-height: 5px;
 }
 
 .paginator {
@@ -329,7 +333,7 @@ pre {
 
 .footer-info {
     position: relative;
-    top: 20px;
+    top: 17px;
 }
 
 /**

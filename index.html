@@ -7,9 +7,6 @@ layout: default
         {{ post.date | date: "%b %-d, %Y" }}
     </div>
     <div class="post-body">
-      <h2>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h2>
       {{ post.content }}
     <div class="post-footer">
         分类: <a href="">{{ post.categories }}</a>
